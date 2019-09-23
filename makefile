@@ -22,15 +22,18 @@ OBJECT_FILES2 = Rizk_MinaRaouf_Wael_Khaled.o
 
 Application = app.exe
 CLEAN = $(OBJECT_FILES1) $(Application) $(DEP_FILES2)
+	
+#Pull in dependency info for existing .o files
+-include $(DEP_FILES2)
+	
+#Remove
+clean :
+	-rm $(CLEAN)
 
 #Implicit
 %.o : %.c
 	$(cc) -c -I$(INC_PATH) $< -o $@
 	$(cc) -MM -I$(INC_PATH) $< > $(Dependencies_PATH)\$*.d
-
-#Compilation
-$(OBJECT_FILES1) : $(SOURCE_FILES)
-	$(cc) -c $(SOURCE_FILES) -o $@
 
 #Linking
 $(Application) : $(OBJECT_FILES1) $(OBJECT_FILES2) #$(DEP_FILES2)
