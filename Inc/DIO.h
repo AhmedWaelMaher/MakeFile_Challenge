@@ -4,3 +4,8 @@
 #include<code.h>
 void DIO_Write(void);
 #endif
+//Ahmed
+//Wael
+//Maher
+void DIO_Write(void);
+#endif
