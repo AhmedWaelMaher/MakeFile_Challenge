@@ -10,11 +10,13 @@ vpath %.c $(SOURCE_PATH)
 SOURCE_FILES = $(subst $(SOURCE_PATH)/,,$(wildcard $(SOURCE_PATH)/*.c))
 
 #Folder of .d
-Dependencies_PATH = .\Dependencies
+
+Dependencies_PATH = Dependencies/
 
 #Dependencies variables
 DEP_FILES1 = $(SOURCE_FILES:.c=.d)
 DEP_FILES2 = $(addprefix $(Dependencies_PATH)\,$(DEP_FILES1))
+
 
 #Object files
 OBJECT_FILES1 = $(SOURCE_FILES:.c=.o)
