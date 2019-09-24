@@ -6,6 +6,3 @@ void DIO_Write(void);
 #endif
 //Ahmed
 //Wael
-
-void DIO_Write(void);
-#endif
